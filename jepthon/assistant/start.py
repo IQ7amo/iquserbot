@@ -29,16 +29,16 @@ async def start(event):
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.users[0].first_name
     vent = event.chat_id
-    starttext = f"**سڵاو {firstname} ! من {bot_id}, بۆتێکی سادەیی یارمەتیدەرم 🧸🤍 \n\n- [سەرۆك بۆت](tg://user?id={bot.uid}) \nيمكـنك مراسلـة المـالك عبـر هذا البـوت . \n\nاذا كـنت تـريد تنـصيب بـوت خـاص بـك تـاكد من الازرار بالأسفل**"
+    starttext = f"**سڵاو {firstname} ! من {bot_id}, بۆتێکی سادەیی یارمەتیدەرم 🧸🤍 \n\n- [خاوەن بۆت](tg://user?id={bot.uid}) \nدەتوانیت لە ڕێگەی ئەم بۆتەوە پەیام بە خاوەنەکە بدەیت  . \n\nئەگەر دەتەوێت بۆتەکەی خۆت دابمەزرێنیت، دوگمەکانی خوارەوە بپشکنە**"
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
             message=f"اهـلا يا مالكـي انـه انـا {bot_id}, مسـاعدك ! \nمـاذا تريـد ان تفعـل اليـوم ?",
             buttons=[
                                      [Button.inline("عرض المستخدمين 📬", data="users"), Button.inline(
-                                         "اوامر البـوت ⚒️", data="gibcmd")],
-                                     [Button.url("المطـور 🔗", "https://t.me/lMl10l"), Button.inline(
-                                         "اوامر الزغـرفة", data="rozzag")],
+                                         "فەرمانەکانی بۆت ⚒️", data="gibcmd")],
+                                     [Button.url("گەشەپێدەر 🔗", "https://t.me/IQ7amo"), Button.inline(
+                                         "فەرمانی زەخرەفە", data="rozzag")],
 
                                  ])
     else:
@@ -51,8 +51,8 @@ async def start(event):
             message=starttext,
             link_preview=False,
             buttons=[
-                [custom.Button.inline("تنـصيب جيـبثون  🐍", data="deploy")],
-                [Button.url("تحتاج مسـاعدة ❓", "https://t.me/lMl10l")],
+                [custom.Button.inline("دامەزراندنی بۆتی زیرەك  🕷️", data="deploy")],
+                [Button.url("پێویستیت بە یارمەتییە ❓", "https://t.me/IQ7amo")],
             ],
         )
 
@@ -77,7 +77,7 @@ async def users(event):
     if event.query.user_id == bot.uid:
         await event.delete()
         total_users = get_all_users()
-        users_list = "- قـائمة مستخـدمين البـوت  : \n\n"
+        users_list = "- لیستی بەکارهێنەرانی بۆت  : \n\n"
         for starked in total_users:
             users_list += ("==> {} \n").format(int(starked.chat_id))
         with io.BytesIO(str.encode(users_list)) as tedt_file:
@@ -86,7 +86,7 @@ async def users(event):
                 event.chat_id,
                 tedt_file,
                 force_document=True,
-                caption="مجموع مستخدمـين بوتـك",
+                caption="هەموو بەکارهێنەرانی بۆت",
                 allow_cache=False,
             )
     else:
@@ -107,7 +107,7 @@ async def starkislub(event):
 
 @tgbot.on(events.NewMessage(pattern="^/alive", func=lambda e: e.sender_id == bot.uid))
 async def starkislub(event):
-    razan = "**𝘑𝘌𝘗𝘛𝘏𝘖𝘕 𝘜𝘚𝘌𝘙𝘉𝘖𝘛**\n•━═━═━═━═━━═━═━═━═━•‌‌\n**- حالة البوت **  يعمـل بنجـاح\n**- اصدار التليثون  **: 1.23.0\n**- اصدار البايثون **: 3.9.6\n**- يوزرك ** {mention}\n**- CH : @JepThon\n•━═━═━═━═━━═━═━═━═━•‌‌\n"
+    razan = "**𝘐𝘘 𝘜𝘚𝘌𝘙𝘉𝘖𝘛**\n•━═━═━═━═━━═━═━═━═━•‌‌\n**- دۆخی بۆت ** سەرکەوتووان کاردەکات\n**- وەشانی تێلثۆن  **: 1.23.0\n**- وەشانی پایثۆن **: 3.9.6\n**- ناوی بەکارهێنەر ** {mention}\n**- CH : @xv7amo\n•━═━═━═━═━━═━═━═━═━•‌‌\n"
     await event.reply(razan)
     
     
