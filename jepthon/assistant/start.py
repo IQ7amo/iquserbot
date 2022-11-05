@@ -33,9 +33,9 @@ async def start(event):
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
-            message=f"اهـلا يا مالكـي انـه انـا {bot_id}, مسـاعدك ! \nمـاذا تريـد ان تفعـل اليـوم ?",
+            message=f"بەخێربێیت خاوەنەکەم ئەوە منم {bot_id}, یاریدەدەر ! \nئەمڕۆ دەتەوێت چی بکەیت ?",
             buttons=[
-                                     [Button.inline("عرض المستخدمين 📬", data="users"), Button.inline(
+                                     [Button.inline("پیشاندانی بەکارهێنەران 📬", data="users"), Button.inline(
                                          "فەرمانەکانی بۆت ⚒️", data="gibcmd")],
                                      [Button.url("گەشەپێدەر 🔗", "https://t.me/IQ7amo"), Button.inline(
                                          "فەرمانی زەخرەفە", data="rozzag")],
