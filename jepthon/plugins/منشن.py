@@ -11,14 +11,14 @@ from telethon.errors import UserNotParticipantError
 
 spam_chats = []
 
-@jepiq.ar_cmd(pattern="منشن(?:\s|$)([\s\S]*)")
+@jepiq.ar_cmd(pattern="ئاماژەپێکردن(?:\s|$)([\s\S]*)")
 async def menall(event):
     chat_id = event.chat_id
     if event.is_private:
-        return await edit_or_reply(event, "** ᯽︙ هذا الامر يستعمل للقنوات والمجموعات فقط !**")
+        return await edit_or_reply(event, "** ᯽︙ ئەم فەرمانە کاردەکات لە گرووپ و چەناڵەکان🕷️!**")
     msg = event.pattern_match.group(1)
     if not msg:
-        return await edit_or_reply(event, "** ᯽︙ ضع رسالة للمنشن اولاً**")
+        return await edit_or_reply(event, "** ᯽︙ سەرەتا نامەیەك بۆ ئاماژەکردن دابنێ🕷️**")
     is_admin = False
     try:
         partici_ = await jepiq(GetParticipantRequest(
@@ -41,13 +41,13 @@ async def menall(event):
         spam_chats.remove(chat_id)
     except:
         pass
-@jepiq.ar_cmd(pattern="الغاء منشن")
+@jepiq.ar_cmd(pattern="لادانی ئاماژەپێکردن")
 async def ca_sp(event):
   if not event.chat_id in spam_chats:
-    return await edit_or_reply(event, "** ᯽︙ 🤷🏻 لا يوجد منشن لألغائه**")
+    return await edit_or_reply(event, "** ᯽︙ 🤷🏻هیچ ئاماژەیەك بۆ هەڵوەشاندنەوەی نییە **")
   else:
     try:
       spam_chats.remove(event.chat_id)
     except:
       pass
-    return await edit_or_reply(event, "** ᯽︙ تم الغاء المنشن بنجاح ✓**")
+    return await edit_or_reply(event, "** ᯽︙ لادانی ئاماژەپێکردن سەرکەوتوو بوو ✓**")
