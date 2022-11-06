@@ -20,9 +20,9 @@ async def on_plug_in_callback_query_handler(event):
                 encrypted_tcxt = message["text"]
                 reply_pop_up_alert = encrypted_tcxt
             else:
-                reply_pop_up_alert = "⌯︙عـذرا هذه الهـمسة ليست مخصصة لـك"
+                reply_pop_up_alert = "⌯︙ ببوورە، ئەم لیستە بۆ تۆ مەبەست نییە🕷️.  "
         except KeyError:
-            reply_pop_up_alert = "⌯︙عـذرا هذه الهمسة لم تعد موجوده في سيـرفرات جـيبثون"
+            reply_pop_up_alert = "⌯︙ ببوورە، ئەم لیستە چی تر لە سێرڤەرەکانی بۆتی زیرەك بوونی نیی🕷️. "
     else:
-        reply_pop_up_alert = "⌯︙عـذرا هذه الهمسة لم تعد موجوده  "
+        reply_pop_up_alert = "⌯︙ببوورە، ئەم لیستە چیتر بوونی نییە🕷️.  "
     await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
