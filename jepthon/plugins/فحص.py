@@ -23,21 +23,21 @@ from . import mention
 
 plugin_category = "utils"
 
-#كتـابة وتعـديل:  @lMl10l
-ALIVE_ET = Config.ALIVE_ET or "فحص"
+#نوسین و دەستکاری:  @IQ7amo
+ALIVE_ET = Config.ALIVE_ET or "پشکنین"
 @jepiq.on(admin_cmd(pattern=f"{ALIVE_ET}(?:\s|$)([\s\S]*)"))
     
 async def amireallyalive(event):
-    "للتـأكد من ان البـوت يعـمـل"
+    "بۆ دڵنیابوون لە دۆخی بۆت🕷️🖤."
     reply_to_id = await reply_id(event)
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await edit_or_reply(event, "** ᯽︙ يتـم التـأكـد انتـظر قليلا رجاءا**")
+    await edit_or_reply(event, "** ᯽︙ پشتڕاست کراوەتەوە کەمێك چاوەڕێ بکه🕷️🖤.**")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "⿻┊‌‎"
-    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**父[ 𝙹𝙾𝙺𝙴𝚁 𝙸𝚂 𝚆𝙾𝚁𝙺𝙸𝙽𝙶 ✓ ](t.me/Jepthon)父**"
+    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**父[ 𝙸𝚀 𝙸𝚂 𝚆𝙾𝚁𝙺𝙸𝙽𝙶 ✓ ](t.me/xv7amo)父**"
     RR7_IMG = gvarstatus("ALIVE_PIC") or Config.A_PIC
     jepiq_caption = gvarstatus("ALIVE_TEMPLATE") or temp
     caption = jepiq_caption.format(
@@ -62,7 +62,7 @@ async def amireallyalive(event):
         except (WebpageMediaEmptyError, MediaEmptyError, WebpageCurlFailedError):
             return await edit_or_reply(
                 event,
-                f"**الميـديا خـطأ **\nغـير الرابـط بأستـخدام الأمـر  \n `.اضف_فار ALIVE_PIC رابط صورتك`\n\n**لا يمـكن الحـصول عـلى صـورة من الـرابـط :-** `{PIC}`",
+                f"**میدیا هەڵەیە **\nگۆڕینی بەستەرەکە بە بەکارهێنانی فەرمان \n `.زیادکردنی_ڤار ALIVE_PIC بەستەری وێنەکەت`\n\n**ناتوانێت وێنەیەکی لە بەستەرەکەوە دەست بکەوێت :-** `{PIC}`",
             )
     else:
         await edit_or_reply(
@@ -74,7 +74,7 @@ async def amireallyalive(event):
 temp = """{ALIVE_TEXT}
 **‎{EMOJI}‌‎𝙽𝙰𝙼𝙴 𖠄 {mention}** ٫
 **‌‎{EMOJI}‌‎𝙿𝚈𝚃𝙷𝙾𝙽 𖠄 {pyver}** ٫
-**‌‎{EMOJI}‌‎𝙹𝙾𝙺𝙴𝚁 𖠄 {telever}** ٫
+**‌‎{EMOJI}‌‎𝙸𝚀 𖠄 {telever}** ٫
 **‌‎{EMOJI}‌‎𝚄𝙿𝚃𝙸𝙼𝙴 𖠄 {uptime}** ٫
 ‌‎**{EMOJI}‌‎‌‎𝙿𝙸𝙽𝙶 𖠄 {ping}** ٫
-**𖠄 J𝗼𝗸𝗲𝗿 𝘂𝘀𝗲𝗿𝗯𝗼𝘁 𖠄**"""
+**𖠄 𝙄𝙌 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 𖠄**"""
