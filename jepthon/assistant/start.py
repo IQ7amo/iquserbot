@@ -102,7 +102,7 @@ async def users(event):
 
 @tgbot.on(events.NewMessage(pattern="^/help", func=lambda e: e.sender_id == bot.uid))
 async def starkislub(event):
-    rorza = "**قـائمـة اوامـر البـوت الخاصـة بك**:\n- **جميع هذه الاوامر تستخدم بعد اضافة البوت في مجموعة ورفعه مشـرف مع بعض الصلاحيـات**\n• /start \n ( للـتأكد من حالـة البـوت) \n• /ping \n ( امـر بنـك )  \n• /broadcast \n ( لعمـل اذاعـة لجميـع المستخدمين في البـوت )  \n• /id \n  ( لعـرض ايدي المسـتخدم ) \n• /alive \n- ( لـرؤية معلومات البـوت ) \n• /bun \n-  ( تعمل في المجموعات لحظر شخص )\n• /unbun  \n-  ( تعمل في المجموعات لالغاء حظر مستخدم )  \n• /prumote  \n-  ( لرفـع شخص مشـرف )\n• /demute  \n-  ( لتنزيل الشخص من رتبة الاشراف ) \n• /pin  \n-  ( لتثبيـت رسالة في المجموعـة )  \n• /stats  \n-  ( لعرض مستخدمين البوت )  \n• /purge  \n-  ( بالرد على رسالة ليقوم بحذف ما تحتها من رسائل ) \n• /del  \n-  ( بالـرد على الرسالـة لحـذفها )"
+    rorza = "**لـیـسـتی فـەرمـانـەکـانی بـۆتی تـایـبـەت بـە تۆ**:\n- **جميع هذه الاوامر تستخدم بعد اضافة البوت في مجموعة ورفعه مشـرف مع بعض الصلاحيـات**\n• /start \n ( للـتأكد من حالـة البـوت) \n• /ping \n ( امـر بنـك )  \n• /broadcast \n ( لعمـل اذاعـة لجميـع المستخدمين في البـوت )  \n• /id \n  ( لعـرض ايدي المسـتخدم ) \n• /alive \n- ( لـرؤية معلومات البـوت ) \n• /bun \n-  ( تعمل في المجموعات لحظر شخص )\n• /unbun  \n-  ( تعمل في المجموعات لالغاء حظر مستخدم )  \n• /prumote  \n-  ( لرفـع شخص مشـرف )\n• /demute  \n-  ( لتنزيل الشخص من رتبة الاشراف ) \n• /pin  \n-  ( لتثبيـت رسالة في المجموعـة )  \n• /stats  \n-  ( لعرض مستخدمين البوت )  \n• /purge  \n-  ( بالرد على رسالة ليقوم بحذف ما تحتها من رسائل ) \n• /del  \n-  ( بالـرد على الرسالـة لحـذفها )"
     await event.reply(rorza)
 
 @tgbot.on(events.NewMessage(pattern="^/alive", func=lambda e: e.sender_id == bot.uid))
@@ -113,106 +113,106 @@ async def starkislub(event):
     
 
 
-"""  حقوقي شرفك تغير شي تلعب بشرفك """
+"""  مافەکانم، شەرەفی تۆ ئەوەیە شتێک بگۆڕیت کە بە شەرەفی خۆت یاری بکەیت """
 
-# بـسـم الله الـرحمن الـرحيم  🤍
-# استغـفر ربـك وانت تاخـذ الملفـات النفسـك 🖤، 
+# بـەنـاوی خـودای گـەورە و مـیـھـرەبـان🤍🍀
+# داوای لێخۆشبوون لەخوا دەکەم لەکاتێکدا تۆ خۆت فایلەکان دەبەیت 🖤، 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"rozzag"))) 
 async def settings(event):
     if event.sender_id == bot.uid:
         await event.delete()
         await tgbot.send_message(event.chat_id,
-                                 "**⌯︙ اختر احد خيارات الزغرفه : **",
+                                 "**⌯︙ یەکێك لەمانەی خوارەوە هەڵبژێرە🌿💓. : **",
                                  buttons=[
                                  [Button.inline(
-                                     "اسماء انكلش َِ🛹", data="rozname"),
+                                     "ناوی ئینگلیزی َِ🛹🖤", data="rozname"),
                                   Button.inline(
-                                     "البايو َِ🛹", data="rozpio1")],
+                                     "بایۆ َِ🛹🖤", data="rozpio1")],
                                  [Button.inline(
-                                     "الاشهر َِ🛹 ⁦⁩", data="rozmonth"),
+                                     "ناوی مانگەکان َِ🛹🖤", data="rozmonth"),
                                   Button.inline(
-                                     "اسماء القنوات َِ🛹", data="chanlan")]
+                                     "ناوی چەناڵەکان َِ🛹‌🖤", data="chanlan")]
                                  ])
     else:
-        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @JepThon", alert=True)
+        await event.answer("تۆ ناتوانیت بۆت بکاربهێنیت🌿💓. @xv7amo", alert=True)
 
 
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"rozname"))) 
-async def settings(event):  #    قـسـم  الزغرفـة جمـثـون
-    if event.sender_id == bot.uid:
-        await event.delete()
-        await tgbot.send_message(event.chat_id,
-                                 "**⌯︙ اختر احد الخيارات الاتيه. **",
-                                 buttons=[
-                                     [Button.inline(
-                                         "اسماء شباب َِ🛹 ", data="razan"),
-                                      Button.inline(
-                                         "اسماء بنات َِ🛹", data="RR7PP"),
-                                      Button.inline(
-                                         "║ رجوع ║ ⁦⁩", data="rozzag")]
-                                 ])
-    else:
-        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @JepThon", alert=True)
-
-
-@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"razan")))  
-async def settings(event):  #    قـسـم  الزغرفـة لأسـماء الشـباب
-    if event.sender_id == bot.uid:
-        await event.delete()
-        await tgbot.send_message(event.chat_id,
-                                 "**⌯︙ اختر احد الخيارات الاتيه. **",
-                                 buttons=[
-                                     [Button.inline(
-                                         "القائمه الاولى َِ🛹 ", data="rzan1"),
-                                      Button.inline(
-                                         "القائمه الثانيه َِ🛹", data="raza2")],
-                                     [Button.inline(
-                                         "║ رجوع ║", data="rozname")]
-                                 ])
-    else:
-        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @JepThon", alert=True)
-
-
-
-# Boys zag list1 - قائمه اسماء الشباب الاولى
-@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"rzan1")))
-async def settings(event): #    قـسـم  الزغرفـة لأسـماء الشـباب 1
-    if event.sender_id == bot.uid:
-        await event.delete()
-        await tgbot.send_message(event.chat_id,
-                                 Boyroz1, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="razan")]
-                                 ])
-    else:
-        await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
-
-
-# Boys zag list2 - قائمه اسماء الشباب الثانيه
-@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"raza2"))) 
-async def settings(event):  #    قـسـم  الزغرفـة لأسـماء الشـباب 2
-    if event.sender_id == bot.uid:
-        await event.delete()
-        await tgbot.send_message(event.chat_id,
-                                 Boyroz2, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="razan")]
-                                 ])
-    else:
-        await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
-
-
-@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"RR7PP")))
-async def settings(event): #    قـسـم  الزغرفـة لأسـماء البـنات
+async def settings(event):  #    بـەشـی زەخـرەفـەی بـۆتـی زیـرەك🕷️🖤
     if event.sender_id == bot.uid:
         await event.delete()
         await tgbot.send_message(event.chat_id,
                                  "**⌯︙ یەکێك لەمانەی خوارەوە هەڵبژێرە🌿💓. **",
                                  buttons=[
                                      [Button.inline(
-                                         "لیستی یەکەم َِ🛹 ", data="RR7PP1"),
+                                         "ناوی کوڕان َِ🖤", data="razan"),
                                       Button.inline(
-                                         "لیستی دووەم َِ🛹", data="RR7PP2")],
+                                         "ناوی کچان َِ🖤", data="RR7PP"),
+                                      Button.inline(
+                                         "║ گەڕانەوە🕷️ ║ ⁦⁩", data="rozzag")]
+                                 ])
+    else:
+        await event.answer("تۆ ناتوانیت بۆت بەکاربهێنیت🌿. @xv7amo", alert=True)
+
+
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"razan")))  
+async def settings(event):  #    بـەشـی زەخـرەفـەی نـاوی کـوڕان
+    if event.sender_id == bot.uid:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 "**⌯︙ یەکێك لەمانەی خوارەوە هەڵبژێرە🌿💓. **",
+                                 buttons=[
+                                     [Button.inline(
+                                         "لیستی یەکەم َِ🛹🖤", data="rzan1"),
+                                      Button.inline(
+                                         "لیستی دووەم َِ🛹🖤", data="raza2")],
+                                     [Button.inline(
+                                         "║ گەڕانەوە🕷️ ║", data="rozname")]
+                                 ])
+    else:
+        await event.answer("تۆ ناتوانیت بۆت بەکاربهێنیت🌿. @xv7amo", alert=True)
+
+
+
+# Boys zag list1 - لـیـستی یـەکـەمی نـاوی کوڕان
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"rzan1")))
+async def settings(event): #    بـەشـی زەخـرەفـەی نـاوی کوڕان 1
+    if event.sender_id == bot.uid:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 Boyroz1, 
+                                 buttons=[[Button.inline("║ گەڕانەوە🕷️ ║", data="razan")]
+                                 ])
+    else:
+        await event.answer("تۆ ناتوانیت ئەم بۆتە بەکاربهێنیت🌿.", alert=True)
+
+
+# Boys zag list2 - لـیـستـی دووەمـی نـاوی کوڕان
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"raza2"))) 
+async def settings(event):  #    بـەشـی زەخـرەفـەی نـاوی کوڕان 2
+    if event.sender_id == bot.uid:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 Boyroz2, 
+                                 buttons=[[Button.inline("║ گەڕانەوە🕷️ ║", data="razan")]
+                                 ])
+    else:
+        await event.answer("تۆ ناتوانیت ئەم بۆتە بەکاربهێنیت🌿.", alert=True)
+
+
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"RR7PP")))
+async def settings(event): #    بـەشـی زەخـرەفـەی نـاوی کـچان
+    if event.sender_id == bot.uid:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 "**⌯︙ یەکێك لەمانەی خوارەوە هەڵبژێرە🌿💓. **",
+                                 buttons=[
+                                     [Button.inline(
+                                         "لیستی یەکەم َِ🛹🖤", data="RR7PP1"),
+                                      Button.inline(
+                                         "لیستی دووەم َِ🛹🖤", data="RR7PP2")],
                                      [Button.inline(
                                          "║ گەڕانەوە🕷️ ║", data="rozname")]
                                  ])
@@ -221,7 +221,7 @@ async def settings(event): #    قـسـم  الزغرفـة لأسـماء ال
 
 # شنو تـدور  :)
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"RR7PP1")))
-async def settings(event): #    بـەشـی زەخـرەفـەی کـچ 1
+async def settings(event): #    بـەشـی زەخـرەفـەی نـاوی کـچان 1
     if event.sender_id == bot.uid:
         await event.delete()
         await tgbot.send_message(event.chat_id,
@@ -340,9 +340,9 @@ async def settings(event): #    بـەشـی لە دایـکـبـوون و مـ
                                  "**⌯︙یەکێك لەمانەی خوارەوە هەڵبژێرە🌿💓.  **",
                                  buttons=[
                                      [Button.inline(
-                                         "لەدایكبوون َِ🛹 ", data="rozyear"),
+                                         "لەدایكبوون َِ🛹🖤", data="rozyear"),
                                       Button.inline(
-                                         "مانگەکان َِ🛹", data="months")],
+                                         "مانگەکان َِ🛹🖤", data="months")],
                                      [Button.inline(
                                          "║ گەڕانەوە🕷️ ║", data="rozzag")]
                                  ])
