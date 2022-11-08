@@ -14,7 +14,7 @@ loop = None
 if Config.STRING_SESSION:
     session = StringSession(str(Config.STRING_SESSION))
 else:
-    session = "Jepthon"
+    session = "IQ bot"
 
 try:
     jepiq = CatUserBotClient(
@@ -43,6 +43,6 @@ try:
         connection_retries=None,
     ).start(bot_token=Config.TG_BOT_TOKEN)
 except AccessTokenExpiredError:
-    LOGS.error("توكن البوت منتهي الصلاحية قم باستبداله ليعمل السورس")
+    LOGS.error("تۆکنی بۆت بەسەرچووە جێگۆڕکێی دەکات بۆ ئەوەی سەرچاوەکە کاربکات")
 except AccessTokenInvalidError:
-    LOGS.error("توكن البوت غير صحيح قم باستبداله ليعمل السورس")
+    LOGS.error("تۆکنی بۆت جێی نادروستە بۆ ئەوەی سەرچاوەکە کاربکات")
