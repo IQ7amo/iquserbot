@@ -17,13 +17,13 @@ async def age_verification_true(event: CallbackQuery):
     u_id = event.query.user_id
     if u_id != Config.OWNER_ID and u_id not in Config.SUDO_USERS:
         return await event.answer(
-            "Given That It's A Stupid-Ass Decision, I've Elected To Ignore It.",
+            "بە لەبەرچاوگرتنی ئەوەی کە بڕیارێکی گەمژانەیە، من هەڵمبژاردووە پشتگوێی بخەم.",
             alert=True,
         )
-    await event.answer("Yes I'm 18+", alert=False)
+    await event.answer("بەڵێ من سەرو 18م", alert=False)
     buttons = [
         Button.inline(
-            text="Unsure / Change of Decision ❔",
+            text="دڵنیانییە،  / گۆڕینی بڕیار ❔",
             data="chg_of_decision_",
         )
     ]
@@ -42,19 +42,19 @@ async def age_verification_false(event: CallbackQuery):
     u_id = event.query.user_id
     if u_id != Config.OWNER_ID and u_id not in Config.SUDO_USERS:
         return await event.answer(
-            "Given That It's A Stupid-Ass Decision, I've Elected To Ignore It.",
+            "بە لەبەرچاوگرتنی ئەوەی کە بڕیارێکی گەمژانەیە، من هەڵمبژاردووە پشتگوێی بخەم",
             alert=True,
         )
-    await event.answer("No I'm Not", alert=False)
+    await event.answer("نا من نا", alert=False)
     buttons = [
         Button.inline(
-            text="Unsure / Change of Decision ❔",
+            text="دڵنیانییە، / گۆڕینی بڕیار ❔",
             data="chg_of_decision_",
         )
     ]
     try:
         await event.edit(
-            text="GO AWAY KID !",
+            text="دوورکەوە مناڵ🕷️!",
             file="https://telegra.ph/file/1140f16a883d35224e6a1.jpg",
             buttons=buttons,
         )
