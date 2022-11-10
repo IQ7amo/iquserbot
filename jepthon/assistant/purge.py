@@ -1,6 +1,6 @@
-#(c) Copyright JepThon 2020-21
-#جميع الحقوق محفودظة لسورس جـيبثون 
-#By ~  @RR9R7
+#(c) Copyright IQBot 2020-21
+#هەموو مافەکان پارێزراون بۆ سەرچاوەی بۆتی زیرەك
+#By ~  @IQ7amo
 import asyncio
 
 from telethon import events
@@ -11,7 +11,7 @@ from jepthon import bot
 from .. import *
 
 OWNER_ID = bot.uid
-# للتاكد من صلاحيات المشرف
+# بۆ دڵنیابوون لە دەسەڵاتەکانی بەڕێوبەر
 
 async def is_administrator(user_id: int, message):
     admin = False
@@ -30,12 +30,12 @@ async def purge(event):
     msgs = []
 
     if not await is_administrator(user_id=event.sender_id, message=event):
-        await event.reply("انـت لسـت ادمـن!")
+        await event.reply("تۆ بەڕێوبەر نیت!")
         return
 
     msg = await event.get_reply_message()
     if not msg:
-        await event.reply("قـم بالـرد على الـرسالة التـي تريـد حذف الـرسائل التـي تحـتها.")
+        await event.reply("وەڵامی ئەو نامەیە بدەوە کە دەتەوێت نامەکانی ژێری بسڕیتەوە.")
         return
 
     try:
@@ -53,15 +53,15 @@ async def purge(event):
 
         await tgbot.delete_messages(chat, msgs)
         del_res = await tgbot.send_message(
-            event.chat_id, f"تنظيف سريع {count} رسالة ."
+            event.chat_id, f"پاککردنەوەی خێرا {count} نامە."
         )
 
         await asyncio.sleep(4)
         await del_res.delete()
 
     except MessageDeleteForbiddenError:
-        text = "خـطأ في حـذف الـرسائل.\n"
-        text += "الـرساله قد تكون قديمة او ليسـت لديـك صلاحـيات الـحذف"
+        text = "هەڵە هەیە لە سڕینەوەی نامەکان.\n"
+        text += "نامەکە لەوانەیە کۆنتربێت یان تۆ مۆڵەتی سڕینەوەت نییە."
         del_res = await event.reply(text, parse_mode="md")
         await asyncio.sleep(5)
         await del_res.delete()
@@ -71,13 +71,13 @@ async def purge(event):
 async def delete_msg(event):
 
     if not await is_administrator(user_id=event.sender_id, message=event):
-        await event.reply("انـت لـست ادمـن!")
+        await event.reply("تۆ بەڕێوبەر نیت!")
         return
 
     chat = event.chat_id
     msg = await event.get_reply_message()
     if not msg:
-        await event.reply("قـم بالـرد على الـرسالة التـي تريـد حذف الـرسائل التـي تحـتها")
+        await event.reply("وەڵامی ئەو نامەیە بدەوە کە دەتەوێت نامەکانی ژێری بسڕیتەوە")
         return
     to_delete = event.message
     chat = await event.get_input_chat()
