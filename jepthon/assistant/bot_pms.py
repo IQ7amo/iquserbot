@@ -47,14 +47,14 @@ async def check_bot_started_users(user, event):
     check = get_starter_details(user.id)
     if check is None:
         start_date = str(datetime.now().strftime("%B %d, %Y"))
-        notification = f"👤 {_format.mentionuser(user.first_name , user.id)} قام بتشغيل البوت .\
-                \n**الايدي : **`{user.id}`\
-                \n**الاسم : **{get_display_name(user)}"
+        notification = f"👤 {_format.mentionuser(user.first_name , user.id)} ئەو بۆتەکەی چالاککرد .\
+                \n**ناسنامە 🕷️: **`{user.id}`\
+                \n**ناو🕷️ : **{get_display_name(user)}"
     else:
         start_date = check.date
-        notification = f"👤 {_format.mentionuser(user.first_name , user.id)} قام باعادة تشغيل البوت.\
-                \n**الايدي: **`{user.id}`\
-                \n**الاسم: **{get_display_name(user)}"
+        notification = f"👤 {_format.mentionuser(user.first_name , user.id)} ئەو دووبارە بۆتەکەی چالاککرد.\
+                \n**ناسنامە🕷️: **`{user.id}`\
+                \n**ناو🕷️: **{get_display_name(user)}"
     try:
         add_starter_to_db(user.id, get_display_name(user), start_date, user.username)
     except Exception as e:
@@ -81,7 +81,7 @@ async def bot_pms(event):
             if BOTLOG:
                 await event.client.send_message(
                     BOTLOG_CHATID,
-                    f"**خـطأ**\nأثناء تخزين تفاصيل الرسائل في قاعدة البيانات\n`{str(e)}`",
+                    f"هەڵەیە\nلەکاتی پاراستنی وردەکاری نامەکان لە بنکەی زانیاری \n{str(e)}",
                 )
     else:
         if event.text.startswith("/"):
@@ -346,7 +346,7 @@ async def bot_pm_ban_cb(c_q: CallbackQuery):
     else:
         await c_q.answer(f"Banning UserID -> {user_id} ...", alert=False)
         await ban_user_from_bot(user, "Spamming Bot")
-        await c_q.edit(f"✅ **Successfully Banned**  User ID: {user_id}")
+        await c_q.edit(f"✅🕷️ **بە سەرکەوتوویی قەدەغەکرا** ناسنامەی بەکارهێنەر: {user_id}")
 
 
 def time_now() -> Union[float, int]:
@@ -355,7 +355,7 @@ def time_now() -> Union[float, int]:
 
 @pool.run_in_thread
 def is_flood(uid: int) -> Optional[bool]:
-    """Checks if a user is flooding"""
+    """پشکنین دەکات ئەگەر بەکارهێنەرێك دووبارەکردنەوەی لێدابێت"""
     FloodConfig.USERS[uid].append(time_now())
     if (
         len(
