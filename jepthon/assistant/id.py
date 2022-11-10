@@ -2,7 +2,7 @@ from telethon import events
 from telethon.utils import pack_bot_file_id
 
 
-@tgbot.on(events.NewMessage(pattern="^الايدي"))
+@tgbot.on(events.NewMessage(pattern="^ا"))
 async def _(event):
     if event.reply_to_msg_id:
         await event.get_input_chat()
@@ -11,19 +11,19 @@ async def _(event):
             bot_api_file_id = pack_bot_file_id(r_msg.media)
             await tgbot.send_message(
                 event.chat_id,
-                "⌯︙ايـدي الـدردشة: `{}`\n⌯︙ايدي المستخدم: `{}`".format(
+                "⌯︙ناسنامەی چات: `{}`\n⌯︙ناسنامەی بەکارهێنەر: `{}`".format(
                     str(event.chat_id), str(r_msg.from_id), bot_api_file_id
                 ),
             )
         else:
             await tgbot.send_message(
                 event.chat_id,
-                "⌯︙ايـدي الـدردشة: `{}`\n⌯︙ايدي المستخدم: `{}`".format(
+                "⌯︙ناسنامەی چات: `{}`\n⌯︙ناسنامەی بەکارهێنەر: `{}`".format(
                     str(event.chat_id), str(r_msg.from_id)
                 ),
             )
     else:
         await tgbot.send_message(
-            event.chat_id, "⌯︙ايـدي الـدردشة: `{}`".format(str(event.chat_id))
+            event.chat_id, "⌯︙ناسنامەی چات: `{}`".format(str(event.chat_id))
         )
 
