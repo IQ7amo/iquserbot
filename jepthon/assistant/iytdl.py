@@ -24,9 +24,9 @@ plugin_category = "bot"
     pattern="گۆرانی(?:\s|$)([\s\S]*)",
     command=("گۆرانی", plugin_category),
     info={
-        "header": "ytdl with inline buttons.",
-        "description": "To search and download youtube videos by inline buttons.",
-        "usage": "{tr}iytdl [URL / Text] or [Reply to URL / Text]",
+        "سەری پەڕە": "ytdl لەگەڵ دوگمەکانی ناو هێڵ.",
+        "وەسف": "بۆ گەڕان و داگرتنی ڤیدیۆکانی یوتوب بە دوگمەی هێڵ",
+        "بەکارهێنان": "{tr}iytdl [URL / Text] or [Reply to URL / Text]",
     },
 )
 async def _(event):
@@ -65,7 +65,7 @@ async def _(event):
         )
         thumb = f"https://i.ytimg.com/vi/{ids}/hqdefault.jpg"
         text = f"**ناونیشان🕷️: [{title}]({link})**\n\n"
-        text += f"`Description: {description}\n\n"
+        text += f"`وەسف🕷️: {description}\n\n"
         text += f"「 ماوە🕷️: {duration} 」\n"
         text += f"「 بینینەکان🕷️: {views} 」\n"
         text += f"「 بڵاوکەرەوە🕷️: {publisher} 」\n"
