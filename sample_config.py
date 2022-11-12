@@ -5,7 +5,7 @@ from telethon.tl.types import ChatBannedRights
 
 class Config(object):
     LOGGER = True
-
+    START_IMG = os.environ.get("START_IMG", "https://telegra.ph/file/3851323764f1629e16ce8.jpg")
     A_PIC = os.environ.get("A_PIC", None)
     ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
     SC_TEXT = os.environ.get("SCPIC_TEXT", None)
