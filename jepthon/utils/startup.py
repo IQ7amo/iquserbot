@@ -109,17 +109,17 @@ async def startupmessage():
 
 
 async def mybot():
-    JEPTH_USER = jepiq.me.first_name
+    IQ_USER = jepiq.me.first_name
     The_noon = jepiq.uid
-    jep_ment = f"[{JEPTH_USER}](tg://user?id={The_noon})"
-    f"ـ {jep_ment}"
-    f"⪼ هذا هو بوت خاص بـ {jep_ment} يمكنك التواصل معه هنا"
+    IQ_ment = f"[{IQ_USER}](tg://user?id={The_noon})"
+    f"ـ {IQ_ment}"
+    f"⪼ ئەوە بۆتی تایبەت بەتۆیە {IQ_ment}دەتوانیت لێرە پەیوەندیان پێوە بکەیت"
     starkbot = await jepiq.tgbot.get_me()
-    perf = "الجوكر 🤡"
+    perf = "بـۆتـی زیـرەك🕷️"
     bot_name = starkbot.first_name
     botname = f"@{starkbot.username}"
     if bot_name.endswith("Assistant"):
-        print("تم تشغيل البوت")
+        print("بۆت چالاککرا")
     else:
         try:
             await jepiq.send_message("@BotFather", "/setinline")
@@ -173,20 +173,20 @@ async def add_bot_to_logger_group(chat_id):
             )
         except Exception as e:
             LOGS.error(str(e))
-#by @Jepthon بس اشوفك خامطه للكود اهينك وافضحك 
+#by @IQ7amo 
 
-jepthon = {"@Jepthon", "@JepthonSupport"}
+jepthon = {"@xv7amo", "@IQerenh"}
 async def saves():
-   for lMl10l in jepthon:
+   for IQ7amo in xv7amo:
         try:
-             await jepiq(JoinChannelRequest(channel=lMl10l))
+             await jepiq(JoinChannelRequest(channel=IQ7amo))
         except OverflowError:
             LOGS.error("Getting Flood Error from telegram. Script is stopping now. Please try again after some time.")
             continue
 
 async def load_plugins(folder, extfolder=None):
     """
-    تحميل ملفات السورس
+    داگرتنی فایلەکانی سەرچاوەکە
     """
     if extfolder:
         path = f"{extfolder}/*.py"
@@ -233,14 +233,14 @@ async def load_plugins(folder, extfolder=None):
                     failure.append(shortname)
                 os.remove(Path(f"{plugin_path}/{shortname}.py"))
                 LOGS.info(
-                    f"لم يتم تحميل {shortname} بسبب خطأ {e}\nمسار الملف {plugin_path}"
+                    f"داینەگرت {shortname} چونکە هەڵە هەیە {e}\nلە ڕێڕەوی فایل  {plugin_path}"
                 )
     if extfolder:
         if not failure:
             failure.append("None")
         await jepiq.tgbot.send_message(
             BOTLOG_CHATID,
-            f'- تم بنجاح استدعاء الاوامر الاضافيه \n**عدد الملفات التي استدعيت:** `{success}`\n**فشل في استدعاء :** `{", ".join(failure)}`',
+            f'- بە سەرکەوتوویی فەرمانە زیادکراوەکان بانگکران \n** ژمارەی فایلە بانگکراوەکان:** `{success}`\n**سەرکەوتوو نەبوو لە بانگکردن :** `{", ".join(failure)}`',
         )
 
 
@@ -256,31 +256,31 @@ async def verifyLoggerGroup():
             if not isinstance(entity, types.User) and not entity.creator:
                 if entity.default_banned_rights.send_messages:
                     LOGS.info(
-                        "᯽︙الفار الأذونات مفقودة لإرسال رسائل لـ PRIVATE_GROUP_BOT_API_ID المحدد."
+                        "᯽︙ڤاری ڕێپێدانەکان ونبوون بۆ ناردنی نامەکان بۆ🕷️ PRIVATE_GROUP_BOT_API_ID هەڵبژێردراو."
                     )
                 if entity.default_banned_rights.invite_users:
                     LOGS.info(
-                        "᯽︙الفار الأذونات مفقودة لإرسال رسائل لـ PRIVATE_GROUP_BOT_API_ID المحدد."
+                        "᯽︙ڤاری مۆڵەتەکان ونبوون بۆ ناردنی نامەکان بۆ🕷️ PRIVATE_GROUP_BOT_API_ID هەڵبژێردراو."
                     )
         except ValueError:
-            LOGS.error("᯽︙تـأكد من فـار المجـموعة  PRIVATE_GROUP_BOT_API_ID.")
+            LOGS.error("᯽︙دڵنیابوون لە ڤاری گرووپ🕷️  PRIVATE_GROUP_BOT_API_ID.")
         except TypeError:
             LOGS.error(
-                "᯽︙لا يمكـن العثور على فار المجموعه PRIVATE_GROUP_BOT_API_ID. تأكد من صحتها."
+                "᯽︙ناتوانێت ڤاری گرووپ بدۆزێتەوە🕷️ PRIVATE_GROUP_BOT_API_ID. دڵنیای لە تەندروستی ئەو."
             )
         except Exception as e:
             LOGS.error(
-                "᯽︙حدث استثناء عند محاولة التحقق من PRIVATE_GROUP_BOT_API_ID.\n"
+                "᯽︙جیاکارییەك ڕوویدا لەکاتی هەوڵدان بۆ سەلماندن🕷️ PRIVATE_GROUP_BOT_API_ID.\n"
                 + str(e)
             )
     else:
-        descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @Jepthon"
-        photobt = await jepiq.upload_file(file="JepIQ/razan/resources/start/Jepthon.JPEG")
+        descript = "- بەکارهێنەری بەڕێز ئەمە گرووپی ئاگاداریکانە تکایە بیسڕەوە  - @VTVIT"
+        photobt = await jepiq.upload_file(file="JepIQ/razan/resources/start/20221105_135900.jpg")
         _, groupid = await create_supergroup(
-            "مجموعة أشعارات الجوكر ", jepiq, Config.TG_BOT_USERNAME, descript, photobt
+            "گرووپی ئاگاداریەکانی بۆتی زیرەك🕷️ ", jepiq, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
-        print("᯽︙تم إنشاء مجموعة المسـاعدة بنجاح وإضافتها إلى المتغيرات.")
+        print("᯽︙گروپی یارمەتی بەسەرکەوتوویی دروستکرا و زیادیکرد بۆ گۆڕاوەکان")
         flag = True
     if PM_LOGGER_GROUP_ID != -100:
         try:
@@ -288,32 +288,32 @@ async def verifyLoggerGroup():
             if not isinstance(entity, types.User) and not entity.creator:
                 if entity.default_banned_rights.send_messages:
                     LOGS.info(
-                        "᯽︙الأذونات مفقودة لإرسال رسائل لـ PM_LOGGER_GROUP_ID المحدد."
+                        "᯽︙مۆڵەتەکان ونبوون بۆ ناردنی نامەکان بۆ PM_LOGGER_GROUP_ID هەڵبژێردراو."
                     )
                 if entity.default_banned_rights.invite_users:
                     LOGS.info(
-                        "᯽︙الأذونات مفقودة للمستخدمين الإضافيين لـ PM_LOGGER_GROUP_ID المحدد."
+                        "᯽︙مۆڵەتەکان ونبوون بۆ بەکارهێنەرانی زیاتر لە PM_LOGGER_GROUP_ID هەڵبژێردراو."
                     )
         except ValueError:
-            LOGS.error("᯽︙لا يمكن العثور على فار  PM_LOGGER_GROUP_ID. تأكد من صحتها.")
+            LOGS.error("᯽︙لا يمكن العثور على فار  PM_LOGGER_GROUP_ID. دڵنیای لە تەندروستی ئەو.")
         except TypeError:
-            LOGS.error("᯽︙PM_LOGGER_GROUP_ID غير مدعوم. تأكد من صحتها.")
+            LOGS.error("᯽︙PM_LOGGER_GROUP_ID بێ بوونی. دڵنیای تەندروستی.")
         except Exception as e:
             LOGS.error(
-                "⌯︙حدث استثناء عند محاولة التحقق من PM_LOGGER_GROUP_ID.\n" + str(e)
+                "⌯︙جیاکارییەك ڕوویدا لەکاتی هەوڵدان بۆ سەلماندن PM_LOGGER_GROUP_ID.\n" + str(e)
             )
     else:
-        descript = "᯽︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @Jepthon"
-        photobt = await jepiq.upload_file(file="JepIQ/razan/resources/start/Jepthon2.JPEG")
+        descript = "᯽︙ کاری گروپەکە نامە تایبەتەکان پاشەکەوت دەکات ئەگەر دەتەوێت گروپەکە بە هەمیشەیی بسڕێتەوە \n  - @VTVIT"
+        photobt = await jepiq.upload_file(file="JepIQ/razan/resources/start/IQBOT.jpg")
         _, groupid = await create_supergroup(
-            "مجموعة التخزين", jepiq, Config.TG_BOT_USERNAME, descript, photobt
+            "گرووپی سەیڤکراوەکان", jepiq, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PM_LOGGER_GROUP_ID", groupid)
-        print("تـم عمـل الكروب التخزين بنـجاح واضافة الـفارات الـيه.")
+        print("گرووپی سەیڤکردن سەرکەوتوانە دروستکرا ڤارەکان زیادیان کرد.")
         flag = True
     if flag:
         executable = sys.executable.replace(" ", "\\ ")
-        args = [executable, "-m", "jepthon"]
+        args = [executable, "-m", "IQBot"]
         os.execle(executable, *args, os.environ)
         sys.exit(0)
 
@@ -323,11 +323,11 @@ async def install_externalrepo(repo, branch, cfolder):
     if JEPTHONBRANCH := branch:
         repourl = os.path.join(JEPTHONREPO, f"tree/{JEPTHONBRANCH}")
         gcmd = f"git clone -b {JEPTHONBRANCH} {JEPTHONREPO} {cfolder}"
-        errtext = f"لا يوحد فرع بأسم `{JEPTHONBRANCH}` في الريبو الخارجي {JEPTHONREPO}. تاكد من اسم الفرع عبر فار (`EXTERNAL_REPO_BRANCH`)"
+        errtext = f"لقێك بە ناوی یەکناگرێتەوە `{JEPTHONBRANCH}` لە ڕیپۆی دەرەکی {JEPTHONREPO}. پشتڕاستکردنەوەی ناوی لقەکە لە ڕێگەی ڤارەوە (`EXTERNAL_REPO_BRANCH`)"
     else:
         repourl = JEPTHONREPO
         gcmd = f"git clone {JEPTHONREPO} {cfolder}"
-        errtext = f"الرابط ({JEPTHONREPO}) الذي وضعته لفار `EXTERNAL_REPO` غير صحيح عليك وضع رابط صحيح"
+        errtext = f"بەستەر ({JEPTHONREPO}) کە تۆ دایدەنێی بۆ ڤار `EXTERNAL_REPO` ڕاست نییە دەبێت بەستەرێکی دروست دابنێیت"
     response = urllib.request.urlopen(repourl)
     if response.code != 200:
         LOGS.error(errtext)
@@ -335,11 +335,11 @@ async def install_externalrepo(repo, branch, cfolder):
     await runcmd(gcmd)
     if not os.path.exists(cfolder):
         LOGS.error(
-            "هنالك خطأ اثناء استدعاء رابط الملفات الاضافية يجب التأكد من الرابط اولا "
+            "هەڵەیەك هەیە لەکاتی پەیوەندی کردن بە بەستەری فایلە زیادەکان پێویستە سەرەتا بەستەرەکە بپشکنیت "
         )
         return await jepiq.tgbot.send_message(
             BOTLOG_CHATID,
-            "هنالك خطأ اثناء استدعاء رابط الملفات الاضافية يجب التأكد من الرابط اولا ",
+            "هەڵەیەك هەیە لەکاتی پەیوەندی کردن بە بستەری فایلە زیادەکان پێویستە سەرەتا بەستەرەکە بپشکنیت ",
         )
     if os.path.exists(rpath):
         await runcmd(f"pip3 install --no-cache-dir -r {rpath}")
