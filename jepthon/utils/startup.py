@@ -24,16 +24,16 @@ from ..sql_helper.global_collection import (
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
-LOGS = logging.getLogger("jepthon")
+LOGS = logging.getLogger("IQBot")
 
 cmdhr = Config.COMMAND_HAND_LER
 bot = jepiq
 ENV = bool(os.environ.get("ENV", False))
 
 if ENV:
-    VPS_NOLOAD = ["سيرفر"]
+    VPS_NOLOAD = ["سێرڤەر"]
 elif os.path.exists("config.py"):
-    VPS_NOLOAD = ["هيروكو"]
+    VPS_NOLOAD = ["هێرۆکۆ"]
 
 async def setup_bot():
     """
@@ -46,7 +46,7 @@ async def setup_bot():
             if option.ip_address == jepiq.session.server_address:
                 if jepiq.session.dc_id != option.id:
                     LOGS.warning(
-                        f"⌯︙معرف ثابت في الجلسة من {jepiq.session.dc_id}"
+                        f"⌯︙پێناسێکی لەدانیشتنی {jepiq.session.dc_id}"
                         f"⌯︙لـ  {option.id}"
                     )
                 jepiq.session.set_dc(option.id, option.ip_address, option.port)
@@ -60,7 +60,7 @@ async def setup_bot():
         if Config.OWNER_ID == 0:
             Config.OWNER_ID = utils.get_peer_id(jepiq.me)
     except Exception as e:
-        LOGS.error(f"كـود تيرمكس - {str(e)}")
+        LOGS.error(f"کۆد تێرمۆکس - {str(e)}")
         sys.exit()
 
 
@@ -73,8 +73,8 @@ async def startupmessage():
             Config.CATUBLOGO = await jepiq.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/6b96d5ea58d065005ec9c.jpg",
-                caption="**᯽︙ بــوت الجوكر يـعـمـل بـنـجـاح ✓ **\n**᯽︙ ارسل `.الاوامر` لرؤية اوامر السورس**",
-                buttons=[(Button.url("سورس الجوكر", "https://t.me/JepthonSupport"),)],
+                caption="**᯽︙ بـۆتـی زیـرەك کـاردەکـات🕷️✓ **\n**᯽︙ بنێرە`.فەرمانەکان`بۆ بینینی فەرمانەکانی سەرچاوەکە**",
+                buttons=[(Button.url("سەرچاوەی بۆتی زیرەك", "https://t.me/JepthonSupport"),)],
             )
     except Exception as e:
         LOGS.error(e)
@@ -92,13 +92,13 @@ async def startupmessage():
             message = await jepiq.get_messages(msg_details[0], ids=msg_details[1])
             text = (
                 message.text
-                + "\n\n**᯽︙اهلا وسهلا لقد قمت باعاده تشغيل بـوت الجوكر تمت بنجاح**"
+                + "\n\n**᯽: بەخێربێیت، تۆ بە سەرکەوتوویی بۆتی زیرەكت دەستپێکردەوە**"
             )
             
             if gvarstatus("restartupdate") is not None:
                 await jepiq.send_message(
                     msg_details[0],
-                    f"{cmdhr}بنك",
+                    f"{cmdhr}پینک",
                     reply_to=msg_details[1],
                     schedule=timedelta(seconds=10),
                 )
