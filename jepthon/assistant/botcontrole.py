@@ -76,8 +76,8 @@ async def bot_broadcast(event):
                             total=bot_users_count,
                             current=count + len(blocked_users),
                         )
-                        + f"\n\n• ✔️ **بنـجاح* :  `{count}`\n"
-                        + f"• ✖️ **خطأ** :  `{len(blocked_users)}`"
+                        + f"\n\n• ✔️🕷️ **سەرکەوتووبوو* :  `{count}`\n"
+                        + f"• ✖️ **هەڵەیە** :  `{len(blocked_users)}`"
                     )
                     await br_cast.edit(prog_)
                 except FloodWaitError as e:
@@ -96,9 +96,9 @@ async def bot_broadcast(event):
     pattern="users$",
     command=("users", plugin_category),
     info={
-        "header": "للحصول على مستخدمين البوت",
-        "description": "لعـرض قـائمة المـستخدمين الـذي قـاموا بتـشغيل بـوتك",
-        "usage": "{tr}المستخدمين",
+        "سەری پەڕە": "بۆ بەدەستهێنانی بەکارهێنەرانی بۆت",
+        "وەسف": "لعـرض قـائمة المـستخدمين الـذي قـاموا بتـشغيل بـوتك",
+        "بەکارهێنان": "{tr}بەکارهێنەرەکان",
     },
 )
 async def ban_starters(event):
@@ -106,7 +106,7 @@ async def ban_starters(event):
     ulist = get_all_starters()
     if len(ulist) == 0:
         return await edit_delete(event, "** ليم يستخدم اي احد بوتك**")
-    msg = "**قائمه مستخدمين البوت :\n\n**"
+    msg = "**لیستی بەکارهێنەرانی بۆت :\n\n**"
     for user in ulist:
         msg += f"• 👤 {_format.mentionuser(user.first_name , user.user_id)}\n**الايدي:** `{user.user_id}`\n**المعرفات:** @{user.username}\n**التاريخ: **__{user.date}__\n\n"
     await edit_or_reply(event, msg)
@@ -131,17 +131,17 @@ async def ban_botpms(event):
         user = await event.client.get_entity(user_id)
         user_id = user.id
     except Exception as e:
-        return await event.reply(f"**خطأ:**\n`{str(e)}`")
+        return await event.reply(f"**هەڵەیە:**\n`{str(e)}`")
     if user_id == Config.OWNER_ID:
-        return await event.reply("لا أستطيع حظر مالك البوت")
+        return await event.reply("ناتوانم خاوەنی بۆت بلۆك بکەم🕷️.")
     check = check_is_black_list(user.id)
     if check:
         return await event.client.send_message(
             event.chat_id,
-            f"#بالفعل_محظور\
-            \nهذا المستخدم موجود في قائمه المحظورين\
-            \n**سبب الحظر:** `{check.reason}`\
-            \n**التاريخ:** `{check.date}`.",
+            f"#پێشتر_قەدەغەکراوە\
+            \nئەم بەکارهێنەرە لە لیستی کەسە بلۆککراوەکاندایە\
+            \n**هۆکاری قەدەغەکردنت\باند:** `{check.reason}`\
+            \n**بەروار:** `{check.date}`.",
         )
     msg = await ban_user_from_bot(user, reason, reply_to)
     await event.reply(msg)
@@ -195,27 +195,27 @@ async def ban_starters(event):
 
 
 @jepiq.bot_cmd(
-    pattern="وضع_التكرار (تشغيل|تعطيل)$",
-    command=("وضع_تكرار", plugin_category),
+    pattern="دۆخی_دووبارەکردنەوە(چالاککردن|ناچالاککردن)$",
+    command=("دۆخی_دووبارەکردنەوە", plugin_category),
     info={
-        "header": "لتشغيل او تعطيل التكرار في بوتك",
-        "الشـرح": "اذا قـام المسـتخدم بـتكرار او تعـديـل 10 رسـائل سيـقوم الـبوت بحـظره",
-        "الاسـتخـدام": [
-            "{tr}وضع_تكرار تشغيل",
-            "{tr}وضع_تكرار تعطيل",
+        "header": "بۆ چالاککردن و نا چالاککردنی دووبارە کردنەوە لە بۆتەکەت",
+        "ڕوونکردنەوە": "🕷️ئەگەر بەکارهێنەرەکە 10 نامە دووبارە بکاتەوە یان چاکی بکاتەوە، بۆتەکە بلۆکی دەکات",
+        "بەکارهێنان": [
+            "{tr}دۆخی_دووبارەکردنەوە چالاکە",
+            "{tr}دۆخی_دووبارەکردنەوە ناچالاکە",
         ],
     },
 )
 async def ban_antiflood(event):
-    "لتشغيل او تعطيل التكرار في بوتك."
+    "بۆ چالاککردن و نا چالاککردنی دووبارەکردنەوە لە بۆتەکەت."
     input_str = event.pattern_match.group(1)
-    if input_str == "تشغيل":
+    if input_str == "چالاککردن":
         if gvarstatus("bot_antif") is not None:
-            return await edit_delete(event, "`Bot Antiflood was already enabled.`")
+            return await edit_delete(event, "`دژە فلۆدی بۆت پێشتر چالاککراوە`")
         addgvar("bot_antif", True)
-        await edit_delete(event, "`Bot Antiflood Enabled.`")
-    elif input_str == "تعطيل":
+        await edit_delete(event, "`دژە فلۆدی بۆت چالاککراوە`")
+    elif input_str == "نا چالاککردن":
         if gvarstatus("bot_antif") is None:
-            return await edit_delete(event, "`Bot Antiflood was already disabled.`")
+            return await edit_delete(event, "`دژە فلۆدی بۆت پێشتر لە کارخراوە.`")
         delgvar("bot_antif")
-        await edit_delete(event, "`Bot Antiflood Disabled.`")
+        await edit_delete(event, "` دژە فلۆدی بۆت لە کارخراوە.`")
