@@ -13,7 +13,7 @@ from ..helpers.tools import media_type
 from ..helpers.utils import _cattools, _catutils, _format, install_pip, reply_id
 from .decorators import admin_cmd, sudo_cmd
 
-LOGS = logging.getLogger("jepthon")
+LOGS = logging.getLogger("IQBot")
 
 
 def load_module(shortname, plugin_path=None):
@@ -26,7 +26,7 @@ def load_module(shortname, plugin_path=None):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        LOGS.info("⌯︙تم بنجاح تحميل ملف " + shortname)
+        LOGS.info("⌯︙فایل بەسەرکەوتوویی داگرترا " + shortname)
     else:
         if plugin_path is None:
             path = Path(f"jepthon/plugins/{shortname}.py")
@@ -58,7 +58,7 @@ def load_module(shortname, plugin_path=None):
         spec.loader.exec_module(mod)
         # for imports
         sys.modules["jepthon.plugins." + shortname] = mod
-        LOGS.info("⌯︙تم بنجاح تحميل ملف " + shortname)
+        LOGS.info("⌯︙فایل بە سەرکەوتوویی داگرترا  " + shortname)
 
 
 def remove_plugin(shortname):
@@ -116,8 +116,8 @@ def start_assistant(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("يتم تشغيل البوت المساعد.")
-        print("بنجاح تم استدعاء " + shortname)
+        print("بۆتێکی یاریدەدەر چالاککراوە.")
+        print("سەرکەوتووانە پێی دەوترێت " + shortname)
     else:
         import importlib
         import sys
@@ -130,4 +130,4 @@ def start_assistant(shortname):
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
         sys.modules["jepthon.plugins.assistant" + shortname] = mod
-        print("بنجاح يتم تحميل " + shortname)
+        print("بە سەرکەوتوویی داگرترا " + shortname)
