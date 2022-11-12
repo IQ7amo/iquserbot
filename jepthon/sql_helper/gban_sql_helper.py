@@ -18,7 +18,7 @@ from . import BASE, SESSION
 
 
 class GBan(BASE):
-    __tablename__ = "gban"
+    __tablename__ = "دەرکردنی گشتی"
     chat_id = Column(String(14), primary_key=True)
     reason = Column(String(127))
 
