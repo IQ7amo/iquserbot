@@ -1,13 +1,13 @@
 try:
     from . import BASE, SESSION
 except ImportError as e:
-    raise Exception("Hello!") from e
+    raise Exception("سڵاو!") from e
 
 from sqlalchemy import Column, String
 
 
 class GMute(BASE):
-    __tablename__ = "gmute"
+    __tablename__ = "ئاگاداری گشتی"
     sender = Column(String(14), primary_key=True)
 
     def __init__(self, sender):
