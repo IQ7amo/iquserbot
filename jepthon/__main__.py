@@ -24,17 +24,17 @@ print("Licensed under the terms of the " + jepthon.__license__)
 cmdhr = Config.COMMAND_HAND_LER
 
 try:
-    LOGS.info("جارِ بدء بوت جيبثون ✓")
+    LOGS.info("دەست پێکردنی بۆتی زیرەك👾")
     jepiq.loop.run_until_complete(setup_bot())
-    LOGS.info("تم اكتمال تنصيب البوت ✓")
+    LOGS.info("دامەزراندنی بۆت تەواوبوو👾✓")
 except Exception as e:
     LOGS.error(f"{str(e)}")
     sys.exit()
 
 try:
-    LOGS.info("يتم تفعيل وضع الانلاين")
+    LOGS.info("دۆخی سەرهێڵ چالاککراوە.")
     jepiq.loop.run_until_complete(mybot())
-    LOGS.info("تم تفعيل وضع الانلاين بنجاح ✓")
+    LOGS.info("بە سەرکەوتوویی دۆخی سەرهێڵ کاردەکات✓")
 except Exception as jep:
     LOGS.error(f"- {jep}")
     sys.exit()    
@@ -57,10 +57,10 @@ async def startup_process():
     await load_plugins("plugins")
     await load_plugins("assistant")
     print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
-    print("᯽︙بـوت الجوكر يعـمل بـنجاح ")
+    print("᯽︙بـۆتـی زیـرەك بە سـەرکەوتـوویی کاردەکات 🕷️ ")
     print(
-        f"تم تشغيل الانلاين تلقائياً ارسل {cmdhr}الاوامر لـرؤيـة اوامر السورس\
-        \nللمسـاعدة تواصـل  https://t.me/JepthonSupport"
+        f"چالاککردنی ئینلانی خودکار {cmdhr}فەرمانەکان بۆ بینینی فەرمانەکانی سەرچاوەکە\
+        \nبۆ یارمەتی  https://t.me/VTVIT"
     )
     print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
     await verifyLoggerGroup()
