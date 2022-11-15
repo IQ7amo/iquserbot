@@ -66,7 +66,7 @@ async def extract_time(cat, time_val):
         unit = time_val[-1]
         time_num = time_val[:-1]  # type: str
         if not time_num.isdigit():
-            await cat.edit("الوقت الذي تم تحديده غير صحيح")
+            await cat.edit("کاتی دیاریکراو نادروستە")
             return None
         if unit == "s":
             bantime = int(time.time() + int(time_num) * 1)
@@ -81,7 +81,7 @@ async def extract_time(cat, time_val):
         else:
             # how even...?
             await cat.edit(
-                f"خطأ في تحديدالوقت اكتب من الاسفل:\n s,  m , h , d او w : {time_val[-1]}"
+                f"هەڵە لە دیاریکردنی جۆری کات لە خوارەوە:\n s,  m , h , d او w : {time_val[-1]}"
             )
             return None
         return bantime
