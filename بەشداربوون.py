@@ -9,10 +9,10 @@ async def reda(event):
     ty = ty.replace(".بەشداربوون", "")
     ty = ty.replace(" ", "")
     if len (ty) < 2:
-        return await edit_delete(event, "**قم بكتابة نوع الاشتراك الاجباري كروب او خاص**")
+        return await edit_delete(event, "**جۆری بەشداربوونی ناچاری گرووپ یان تایبەت بنووسە**")
     if ty == "گرووپ":
         if not event.is_group:
-            return await edit_delete("**استعمل الأمر في الجروب المراد تفعيل الاشتراك الاجباري به**")
+            return await edit_delete("**فەرمانەکە بەکاربێنە لەو گرووپەی دەتەوێت بەشداربوونی ناچاری چالاك بکەیت**")
         if event.is_group:
             if gvarstatus ("subgroup") == event.chat_id:
                 return await edit_delete(event, "**بەشداربوونی ناچاری بۆ ئەم گرووپە چالاککراوە**")
@@ -27,7 +27,7 @@ async def reda(event):
             addgvar ("subprivate", True)
             await edit_or_reply(event, "**بەشداربوونی ناچاری بۆ تایبەت چالاککراوە**")
     if ty not in ["تایبەت", "گرووپ"]:
-        return await edit_delete(event, "**جۆری بەشداربوونی ناچاری بۆ گرووپ یان تایبەت بنووسە**")
+        return await edit_delete(event, "**جۆری بەشداربوونی ناچاری گرووپ یان تایبەت بنووسە**")
 @jepiq.ar_cmd(pattern="وەستاندن")
 async def reda (event):
     cc = event.text.replace(".هەڵوەشاندنەوە", "")
