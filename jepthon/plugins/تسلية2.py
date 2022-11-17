@@ -7,16 +7,16 @@ plugin_category = "fun"
 
 
 @jepiq.ar_cmd(
-    pattern="افكر$",
-    command=("افكر", plugin_category),
+    pattern="بیرکردنەوە$",
+    command=("بیرکردنەوە", plugin_category),
     info={
-        "الامر": "امر تسليه جربه بنفسك",
-        "الاستخدام": "{tr}افكر",
+        "فەرمان": "ئەمە بابەتێکی سەرگەرمییە، خۆت تاقی بکەرەوە",
+        "بەکارهێنان": "{tr}بیرکردنەوە",
     },
 )
 async def _(event):
     "animation command"
-    event = await edit_or_reply(event, "افكر")
+    event = await edit_or_reply(event, "بیرکردنەوە")
     deq = deque(list("🤔🧐🤔🧐🤔🧐"))
     for _ in range(48):
         await asyncio.sleep(0.2)
@@ -25,17 +25,17 @@ async def _(event):
 
 
 @jepiq.ar_cmd(
-    pattern="متت$",
-    command=("متت", plugin_category),
+    pattern="مردم$",
+    command=("مردم", plugin_category),
     info={
-        "الامر": "امر تسليه جربه بنفسك",
-        "الاستخدام": "{tr}متت",
+        "فەرمان": "ئەمە بابەتێکی سەرگەرمییە، خۆت تاقی بکەرەوە",
+        "بەکارهێنان": "{tr}مردم",
     },
 )
 async def _(event):
     "animation command"
-    event = await edit_or_reply(event, "متت")
-    deq = deque(list("😹🤣😂😹🤣😂"))
+    event = await edit_or_reply(event, "مردم")
+    deq = deque(list("😹😂🤣😂😹🤣😂"))
     for _ in range(48):
         await asyncio.sleep(0.2)
         await event.edit("".join(deq))
@@ -43,17 +43,17 @@ async def _(event):
 
 
 @jepiq.ar_cmd(
-    pattern="ضايج$",
-    command=("ضايج", plugin_category),
+    pattern="دڵتەنزێن$",
+    command=("دڵتەزێن", plugin_category),
     info={
-        "الامر": "امر تسليه جربه بنفسك",
-        "الاستخدام": "{tr}ضايج",
+        "فەرمان": "ئەمە بابەتێکی سەرگەرمییە، خۆت تاقی بکەرەوە",
+        "بەکارهێنان": "{tr}دڵتەزێن",
     },
 )
 async def _(event):
     "animation command"
-    event = await edit_or_reply(event, "ضايج")
-    deq = deque(list("😕😞🙁☹️😕😞🙁"))
+    event = await edit_or_reply(event, "دڵتەزێن)
+    deq = deque(list("😕😞💔🙁☹️💔😕😞💔🙁"))
     for _ in range(48):
         await asyncio.sleep(0.2)
         await event.edit("".join(deq))
@@ -61,16 +61,16 @@ async def _(event):
 
 
 @jepiq.ar_cmd(
-    pattern="ساعه$",
-    command=("ساعه", plugin_category),
+    pattern="کاتژمێر$",
+    command=("کاتژمێر", plugin_category),
     info={
-        "الامر": "امر تسليه جربه بنفسك",
-        "الاستخدام": "{tr}ساعه",
+        "فەرمان": "ئەمە بابەتێکی سەرگەرمییە، خۆت تاقی بکەرەوە",
+        "بەکارهێنان": "{tr}کاتژمێر",
     },
 )
 async def _(event):
     "animation command"
-    event = await edit_or_reply(event, "ساعه")
+    event = await edit_or_reply(event, "کاتژمێر")
     deq = deque(list("🕙🕘🕗🕖🕕🕔🕓🕒🕑🕐🕛"))
     for _ in range(48):
         await asyncio.sleep(0.2)
@@ -79,17 +79,17 @@ async def _(event):
 
 
 @jepiq.ar_cmd(
-    pattern="مح$",
-    command=("مح", plugin_category),
+    pattern="مواح$",
+    command=("مواح", plugin_category),
     info={
-        "الامر": "امر تسليه جربه بنفسك",
-        "الاستخدام": "{tr}مح",
+        "فەرمان": "ئەمە بابەتێکی سەرگەرمییە، خۆت تاقی بکرەوە",
+        "بەکارهێنان": "{tr}مواح",
     },
 )
 async def _(event):
     "animation command"
-    event = await edit_or_reply(event, "مح")
-    deq = deque(list("😗😙😚😚😘"))
+    event = await edit_or_reply(event, "مواح)
+    deq = deque(list("😗😻😙😚🥰😚😘"))
     for _ in range(48):
         await asyncio.sleep(0.2)
         await event.edit("".join(deq))
@@ -97,17 +97,17 @@ async def _(event):
 
 
 @jepiq.ar_cmd(
-    pattern="قلب$",
-    command=("قلب", plugin_category),
+    pattern="دڵ$",
+    command=("دڵ", plugin_category),
     info={
-        "الامر": "امر تسليه جربه بنفسك",
-        "الاستخدام": "{tr}قلب",
+        "الامر": "ئەمە بابەتێکی سەرگەرمییە، خۆت تاقی بکەرەوە",
+        "بەکارهێنان": "{tr}دڵ",
     },
 )
 async def _(event):
     "animation command"
-    event = await edit_or_reply(event, "قلب")
-    deq = deque(list("❤️🧡💛💚💙💜🖤"))
+    event = await edit_or_reply(event, "دڵ")
+    deq = deque(list("❤️🧡💛💚💙💜🖤❤️‍🩹🤍💗💓"))
     for _ in range(48):
         await asyncio.sleep(0.2)
         await event.edit("".join(deq))
@@ -160,7 +160,7 @@ async def _(event):
 )
 async def _(event):
     "animation command"
-    event = await edit_or_reply(event, "قمر")
+    event = await edit_or_reply(event, "مانگ")
     deq = deque(list("🌗🌘🌑🌒🌓🌔🌕🌖"))
     for _ in range(48):
         await asyncio.sleep(0.2)
