@@ -115,16 +115,16 @@ async def _(event):
 
 
 @jepiq.ar_cmd(
-    pattern="جيم$",
-    command=("جيم", plugin_category),
+    pattern="جیم$",
+    command=("جیم", plugin_category),
     info={
-        "الامر": "امر تسليه جربه بنفسك",
-        "الاستخدام": "{tr}جيم",
+        "فەرمان": "ئەمە بابەتێکی سەرگەرمییە، خۆت تاقیکەرەوە",
+        "بەکارهێنان": "{tr}جیم",
     },
 )
 async def _(event):
     "animation command"
-    event = await edit_or_reply(event, "جيم")
+    event = await edit_or_reply(event, "جیم")
     deq = deque(list("🏃‍🏋‍🤸‍🏃‍🏋‍🤸‍🏃‍🏋‍🤸‍"))
     for _ in range(48):
         await asyncio.sleep(0.2)
