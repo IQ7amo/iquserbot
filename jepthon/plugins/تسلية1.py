@@ -102,9 +102,9 @@ async def _(event):
         "`پاڤێڵ دورۆڤ :  تکایە سوپاس مەکە برا ، تێلێگرام بۆ ئێمەیە. تەنها زەنگێك بدە کاتێک ئازاد دەبیت`",
         "`من: ئایا هیچ کێشەیەك هەیە/فریاکەوتن???`",
         "`پاڤێڵ دورۆڤ: Yes Sur, There is A Bug in Telegram v69.6.9.\nI Am Not Able To Fix It. If Possible, Please Help Fix The Bug.`",
-        "`Me: Send Me The App On My Telegram Account, I Will Fix The Bug & Send You.`",
-        "`Pavel Durov : Sure Sur \nTC Bye Bye :)`",
-        "`Private Call Disconnected.`",
+        "`من: بەرنامەکەم بۆ بنێرە لەسەر ئەکاونتی تێلگرامەکەم، من چاکی دەکەمەوە & تۆ بنێرە.`",
+        "`پاڤێڵ دورۆڤ  : بە دڵنیایەوە  \nTC بایی :)`",
+        "`پەیوەندی تایبەت پچڕا.`",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
@@ -136,7 +136,7 @@ async def _(event):
         "------------------>",
         "------>;(^。^)ノ",
         "(￣ー￣) مردوو",
-        "`Targeted user killed by Headshot 😈.😈.😈.😈.😈.😈.😈......`\n '#Sad_Reacts_Online'\n",
+        "`بەکارهێنەری ئامانجکراو کوژرا لەلایەن @VTVIT 😈.😈.😈.😈.😈.😈.😈......`\n '#Sad_Reacts_Online'\n",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
