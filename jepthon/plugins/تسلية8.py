@@ -29,16 +29,16 @@ async def get_font_file(client, channel_id, search_kw=""):
 
 
 @jepiq.ar_cmd(
-    pattern="نص(?:\s|$)([\s\S]*)",
-    command=("نص", plugin_category),
+    pattern="دەق(?:\s|$)([\s\S]*)",
+    command=("دەق", plugin_category),
     info={
-        "header": "Anime that makes your writing fun.",
-        "usage": "{tr}sttxt <text>",
-        "examples": "{tr}sttxt hello",
+        "فەرمان": "ئەمە بابەتێکی سەرگەرمییە، خۆت تاقی بکەرەوە.",
+        "بەکارهێنان": "{tr}sttxt <text>",
+        "نموونەکان": "{tr}sttxt سڵاو",
     },
 )
 async def waifu(animu):
-    " ⌔︙الأنمي الذي يجعل كتابتك ممتعة"
+    " ⌔︙ئەو ئەنیمێیەی کە نووسینەکەت خۆش دەکات"
     text = animu.pattern_match.group(1)
     reply_to_id = await reply_id(animu)
     if not text:
@@ -46,7 +46,7 @@ async def waifu(animu):
             text = (await animu.get_reply_message()).message
         else:
             return await edit_or_reply(
-                animu, "` ⌔︙أنت لم تكتب أي نص ، الوايفو سوف تغادر.`"
+                animu, "` ⌔︙تۆ هیچ دەقێکت نەنووسیوە، وایڤۆ جێدەهێڵێ.`"
             )
     text = deEmojify(text)
     await animu.delete()
@@ -55,19 +55,19 @@ async def waifu(animu):
 
 # 12 21 28 30
 @jepiq.ar_cmd(
-    pattern="ستيكر ?(?:(.*?) ?; )?([\s\S]*)",
-    command=("ستيكر", plugin_category),
+    pattern="ستیکەر ?(?:(.*?) ?; )?([\s\S]*)",
+    command=("ستیکەر", plugin_category),
     info={
-        "header": "your text as sticker.",
-        "usage": [
-            "{tr}stcr <text>",
-            "{tr}stcr <font file name> ; <text>",
+        "سەری پەڕە": "دەقەکەت وەکو ستیکەر.",
+        "بەکارهێنان": [
+            "{tr}ستیکەر <دەق>",
+            "{tr}ستیکەر <ناوی فایلی فۆنت> ; <دەق>",
         ],
-        "examples": "{tr}stcr hello",
+        "examples": "{tr}ستیکەر سڵاو",
     },
-) # WRITED BY - @VUUZZ - @lMl10l
+) # WRITED BY - @VTVIT - @IQ7amo
 async def sticklet(event):
-    " ⌔︙النص الخاص بك كملصق"
+    " ⌔︙ دەقەکەت وەکو ستیکەر"
     R = random.randint(0, 256)
     G = random.randint(0, 256)
     B = random.randint(0, 256)
@@ -81,7 +81,7 @@ async def sticklet(event):
         if event.reply_to_msg_id:
             sticktext = reply_message.message
         else:
-            return await edit_or_reply(event, " ⌔︙تحتاج شيئًا ، همممم")
+            return await edit_or_reply(event, " ⌔︙پێویستت بە شتێکە، هممم")
     await event.delete()
     sticktext = deEmojify(sticktext)
     sticktext = textwrap.wrap(sticktext, width=10)
@@ -99,14 +99,14 @@ async def sticklet(event):
         ((512 - width) / 2, (512 - height) / 2), sticktext, font=font, fill=(R, G, B)
     )
     image_stream = io.BytesIO()
-    image_stream.name = "jepiq.webp"
+    image_stream.name = "IQBot.webp"
     image.save(image_stream, "WebP")
     image_stream.seek(0)
     # finally, reply the sticker
     await event.client.send_file(
         event.chat_id,
         image_stream,
-        caption="cat's Sticklet",
+        caption="ستیکەری پشیلە",
         reply_to=reply_to_id,
     )
     try:
@@ -114,7 +114,7 @@ async def sticklet(event):
     except BaseException:
         pass
 
-# WRITED BY - @VUUZZ - @lMl10l
+# WRITED BY - @VTVIT - @IQ7amo
 @jepiq.ar_cmd(
     pattern="هونك(?:\s|$)([\s\S]*)",
     command=("هونك", plugin_category),
