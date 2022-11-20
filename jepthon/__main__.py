@@ -16,7 +16,7 @@ from .utils import (
     saves,
 )
 
-LOGS = logging.getLogger("jepthon")
+LOGS = logging.getLogger("IQbot")
 
 print(jepthon.__copyright__)
 print("Licensed under the terms of the " + jepthon.__license__)
