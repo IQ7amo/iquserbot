@@ -63,7 +63,7 @@ async def waifu(animu):
             "{tr}ستیکەر <دەق>",
             "{tr}ستیکەر <ناوی فایلی فۆنت> ; <دەق>",
         ],
-        "examples": "{tr}ستیکەر سڵاو",
+        "نموونەکان": "{tr}ستیکەر سڵاو",
     },
 ) # WRITED BY - @VTVIT - @IQ7amo
 async def sticklet(event):
@@ -116,16 +116,16 @@ async def sticklet(event):
 
 # WRITED BY - @VTVIT - @IQ7amo
 @jepiq.ar_cmd(
-    pattern="هونك(?:\s|$)([\s\S]*)",
-    command=("هونك", plugin_category),
+    pattern="هۆنک(?:\s|$)([\s\S]*)",
+    command=("هۆنک", plugin_category),
     info={
-        "header": "Make honk say anything.",
-        "usage": "{tr}honk <text/reply to msg>",
-        "examples": "{tr}honk How you doing?",
+        "فەرمان": "هۆنک بە هەر شتێك بڵێ",
+        "بەکارهێنان": "{tr}هۆنك <دەق/وەڵامدانەوەی نامەکە>",
+        "نموونەکان": "{tr}هۆنك چۆن دەیکەیت?",
     },
 )
 async def honk(event):
-    " ᯽︙ اجعل هونك يقول اي شيء."
+    " ᯽︙ وای لێ بکە هۆنك هەر شتێک بڵێت."
     text = event.pattern_match.group(1)
     reply_to_id = await reply_id(event)
     bot_name = "@honka_says_bot"
@@ -134,7 +134,7 @@ async def honk(event):
             text = (await event.get_reply_message()).message
         else:
             return await edit_delete(
-                event, "** ᯽︙ ماذا يفترض أن يقول هونك أعطه نص**"
+                event, "** ᯽︙ چی دەبێت بڵێت هۆنك دەقێکی پێ بدە🕷️🖤.**"
             )
     text = deEmojify(text)
     await event.delete()
@@ -142,16 +142,16 @@ async def honk(event):
 
 
 @jepiq.ar_cmd(
-    pattern="تغريد(?:\s|$)([\s\S]*)",
-    command=("تغريد", plugin_category),
+    pattern="توییت(?:\s|$)([\s\S]*)",
+    command=("توییت", plugin_category),
     info={
-        "header": "Make a cool tweet of your account",
-        "usage": "{tr}twt <text/reply to msg>",
-        "examples": "{tr}twt Catuserbot",
+        "فەرمان": "توییتێکی جوان لە ئەکاونتەکەت دروست بکە",
+        "بەکارھێنان": "{tr}توییت <دەق/بە وەڵامدانەوەی چات>",
+        "نموونەکان": "{tr}توییت IQ_userbot",
     },
 )
 async def twt(event):
-    " ⌔︙قم بعمل تغريدة رائعة من حسابك."
+    " ⌔︙ توییتێکی گەورە لە ئەکاونتەکەت دروست بکە."
     text = event.pattern_match.group(1)
     reply_to_id = await reply_id(event)
     bot_name = "@TwitterStatusBot"
@@ -160,7 +160,7 @@ async def twt(event):
             text = (await event.get_reply_message()).message
         else:
             return await edit_delete(
-                event, "**᯽︙ ماذا يفترض بي ان اغرد اكتي نصا**"
+                event, "**᯽︙  دەبێت چی لە تویتەرێکدا بنووسم🕷️🖤.**"
             )
     text = deEmojify(text)
     await event.delete()
@@ -168,16 +168,16 @@ async def twt(event):
 
 
 @jepiq.ar_cmd(
-    pattern="دوغي(?:\s|$)([\s\S]*)",
-    command=("دوغي", plugin_category),
+    pattern="میم(?:\s|$)([\s\S]*)",
+    command=("میم", plugin_category),
     info={
-        "header": "Make doge say anything.",
-        "usage": "{tr}doge <text/reply to msg>",
-        "examples": "{tr}doge Gib money",
+        "فەرمان": "بۆ وتنی هەر شتێك.",
+        "بەکارهێنان": "{tr}میم بە وەڵامدانەوەی چات>",
+        "نموونەکان": "{tr}میم پارەم پێ بدە",
     },
-) # WRITED BY - @VUUZZ - @lMl10l
+) # WRITED BY - @VTVIT - @IQ7amo
 async def doge(event):
-    " ⌔︙اصنع ستيكر كلب رائع."
+    " ⌔︙دروستکردنی میمی سەگ"
     text = event.pattern_match.group(1)
     reply_to_id = await reply_id(event)
     bot_name = "@DogeStickerBot"
@@ -186,7 +186,7 @@ async def doge(event):
             text = (await event.get_reply_message()).message
         else:
             return await edit_delete(
-                event, "᯽︙ ماذا يفترض بالكلب ان يقول اعطه نصا**"
+                event, "᯽︙ سەگەکە چی دەبێ بڵێت دەقێکی پێ ببەخشە🕷️🖤.**"
             )
     text = deEmojify(text)
     await event.delete()
@@ -194,40 +194,40 @@ async def doge(event):
 # WRITED BY - @VUUZZ - @lMl10l
 
 @jepiq.ar_cmd(
-    pattern="غلاكس(|ر)(?:\s|$)([\s\S]*)",
-    command=("غلاكس", plugin_category),
+    pattern="گلاکس(|ر)(?:\s|$)([\s\S]*)",
+    command=("گلاکس", plugin_category),
     info={
-        "header": "Make glax the dragon scream your text.",
-        "flags": {
-            "r": "Reverse the face of the dragon",
+        "فەرمان": " هاوار کردنی دەقەکەت وەکو ئەژدیھا.",
+        "ئاڵا": {
+            "r": "پێچەوانە کردنی دەموچاوی ئەژدیھا",
         },
-        "usage": [
-            "{tr}glax <text/reply to msg>",
-            "{tr}glaxr <text/reply to msg>",
+        "بەکارهێنان": [
+            "{tr}گلاکس <دەق/بە وەڵامدانەوەی چات>",
+            "{tr}گلاکس ر <دەق/بە وەڵامدانەوەی چات>",
         ],
         "examples": [
-            "{tr}glax Die you",
-            "{tr}glaxr Die you",
+            "{tr}گلاکس بمرە",
+            "{tr}گلاکس ر بمرە",
         ],
     },
-) # WRITED BY - @VUUZZ - @lMl10l
+) # WRITED BY - @VTVIT - @IQ7amo
 async def glax(event):
-    " ⌔︙اجعل غلاكس التنين ينفخ نصك."
+    " ⌔︙وا لە ئەژدیھا بکە دەقەکەت بتەقێنێتەوە🕷️🖤."
     cmd = event.pattern_match.group(1).lower()
     text = event.pattern_match.group(2)
     reply_to_id = await reply_id(event)
     bot_name = "@GlaxScremBot"
-    c_lick = 1 if cmd == "ر" else 0
+    c_lick = 1 if cmd == "ڕ" else 0
     if not text:
         if event.is_reply:
             text = (await event.get_reply_message()).message
         else:
             return await edit_delete(
-                event, " ᯽︙ ماذا يفترض بـ گلاكـس ان يقول اعطه نصا**"
-            ) # WRITED BY - @VUUZZ - @lMl10l
+                event, " ᯽︙ گلاکس چی دەبێت بڵێت دەقێکی پێ ببەخشە🕷️🖤.**"
+            ) # WRITED BY - @VTVIT - @IQ7amo
     text = deEmojify(text)
     await event.delete()
     await hide_inlinebot(
         event.client, bot_name, text, event.chat_id, reply_to_id, c_lick=c_lick
     )
-    # WRITED BY - @VUUZZ - @lMl10l
+    # WRITED BY - @VTVIT - @IQ7amo
