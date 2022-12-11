@@ -14,7 +14,7 @@ loop = None
 if Config.STRING_SESSION:
     session = StringSession(str(Config.STRING_SESSION))
 else:
-    session = "IQ bot"
+    session = "jepthon"
 
 try:
     jepiq = CatUserBotClient(
