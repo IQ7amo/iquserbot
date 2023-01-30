@@ -1,7 +1,7 @@
-FROM IQerenn/iquserbot:slim-buster
+FROM vtvit/iquserbot:slim-buster
 
 #clonning repo 
-RUN git clone https://github.com/IQerenn/iquserbot /root/jepthon
+RUN git clone https://github.com/vtvit/iquserbot /root/jepthon
 #working directory 
 WORKDIR /root/jepthon
 RUN apk add --update --no-cache p7zip
